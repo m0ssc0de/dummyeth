@@ -2,9 +2,18 @@
 
 It's a private ethereum network for play.
 
+## Create accounts
+
+`geth --datadir=./chain-data --password ./password.txt account new > account1.txt`
+
+`geth --datadir=./chain-data --password ./password.txt account new > account2.txt`
+
+The above commands will use string in `password.txt` as password to create accounts with a pair of keys. They will be stored in `./chain-data/keystore/` for chain node and `./account1.txt` for human read. The public key could be found in files.
+
 ## Init
 
 Prepare Genesis block config, [Genesis.json](./Genesis.json)
+> alloc with the pub key got previous.
 
 `geth --identity "dummyeth" init ./Genesis.json --datadir ./chain-data`
 
@@ -36,3 +45,5 @@ null
 null
 > 
 ```
+
+miner.setEtherbase("7df9a875a174b3bc565e6424a0050ebc1b2d1d82")
