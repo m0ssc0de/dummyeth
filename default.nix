@@ -11,5 +11,6 @@ stdenv.mkDerivation {
     # cowsay is an arbitary package
     # see https://nixos.org/nixos/packages.html to search for more
     go-ethereum
+    nodejs
   ];
 }
